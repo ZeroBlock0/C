@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1711616188 source:e:\codeblocks\project\a1\main.c
-	<stdio.h>
-
-1711961532 source:e:\ide\project\a1\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
