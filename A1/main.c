@@ -397,3 +397,79 @@ int main(){
 
 
 //
+int main(){
+    double x;
+    double y;
+    double sum=0;
+    double z;
+    for ( x = 1; x <= 100; x++)
+    {
+        z = 1;
+        for( y = 1; y <= x; y++){
+            z = z * y;
+        }
+        sum = sum + z;
+    }
+    printf("100以内的累加=%f", sum);
+    return 0;
+}
+
+int main(){
+    int i;
+    int sum=0;
+    for ( i = 1; i <= 100; i+2)
+    {
+        sum = sum + i;
+    }
+    printf("1+3+5+...+100=%d\n", sum);
+    return 0;
+}
+
+int main()
+{
+    int i;
+    int sum = 0;
+    i=1;
+    while (i<=100)
+    {
+        sum=sum+i;
+        i=i+2;
+    }
+    printf("1+3+5+...+100=%d\n", sum);
+    return 0;
+}
+
+
+
+int main(){
+    float money = 0;
+    int day = 0;
+    printf("请输入存钱天数\n");
+    scanf("%d",&day);
+    while (day>0)
+    {
+        money = money + 0.01;
+        printf("第%d天存钱%f\n",day,money);
+        day--;
+    }
+    return 0;
+}
+
+
+int main(){
+    float money = 0;
+    int day = 0;
+    do{
+        money = money + 2.5;
+        day = day + 1;
+        if(day % 5 == 0){
+            money = money - 6;
+        }
+        if(money == 100){
+            printf("你已经存了100元，用了%d天",day);
+            break;
+        }
+    }while (1);
+    
+    return 0;
+}
