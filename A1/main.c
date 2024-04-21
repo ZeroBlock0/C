@@ -1,9 +1,8 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-
-//hello world
+// hello world
 /*
 int main()
 {
@@ -14,8 +13,7 @@ int main()
 }
 */
 
-
-//圆的面积
+// 圆的面积
 /*
 int main(){
     float r,s;
@@ -28,8 +26,7 @@ int main(){
 }
 */
 
-
-//长方形的面积
+// 长方形的面积
 /*
 int main(){
     float l,w;
@@ -42,7 +39,7 @@ int main(){
 }
 */
 
-//BMI 1.0
+// BMI 1.0
 /*
 int main(){
     //BMI=体重(kg)÷身高^2(m)
@@ -109,7 +106,7 @@ int main(){
 }
 */
 
-//BMI 2.0
+// BMI 2.0
 /*
 int main() {
     float weight, height, bmi;
@@ -204,7 +201,6 @@ int main() {
 }
 */
 
-
 /*
 在C语言中，当你使用`printf()`函数配合自增运算符`y++`或`++y`时，由于`printf()`函数并不直接改变传入参数的值（它只读取并格式化输出其参数），所以`printf(y++);`和`printf(++y);`的主要区别不在于`printf()`调用本身的行为，而在于自增运算发生在何时以及传给`printf()`函数的是哪个值。
 
@@ -222,10 +218,7 @@ printf("%d\n", y++);  // 输出 "5"，然后 y 变成 6
 printf("%d\n", ++y);  // 输出 "7"，因为 y 先加1变成 6，再打印时已经是 7
 */
 
-
-
-
-//个人所得税
+// 个人所得税
 /*
 int main(){
     float a,b,c,d,e,f;   //a工资  b专项扣除  c应纳税额 d个人所得税 e税率 f速算扣除数
@@ -268,8 +261,7 @@ int main(){
 }
 */
 
-
-//菜单
+// 菜单
 /*
 int main(){
     printf("菜单\n");
@@ -305,8 +297,7 @@ int main(){
 }
 */
 
-
-//成绩
+// 成绩
 /*
 int main(){
     int a,b;
@@ -352,8 +343,7 @@ int main(){
    }
    */
 
-
-//计数
+// 计数
 /*
 int main(){
     int i;
@@ -362,12 +352,11 @@ int main(){
     {
         printf("%d\n",sum+i);
     }
-    
+
 }
 */
 
-
-//计数100
+// 计数100
 /*
 int main(){
     int i;
@@ -376,13 +365,11 @@ int main(){
     {
         printf("%d\n",sum+i);
     }
-    
+
 }
 */
 
-
-
-//计数5050
+// 计数5050
 /*
 int main(){
     int sum = 0;
@@ -395,8 +382,55 @@ int main(){
 }
 */
 
+// 100以内奇数和
+/*
+int main(){
+    int i;
+    int sum = 0;
+    for ( i = 1; i <= 100; i+2)
+    {
+        sum = sum + i;
+    }
+    printf("1+3+5+...+100=%d",sum);
+    return 0;
+}
+*/
+
+// 100以内奇数积
+/*
+int main()
+{
+    int i;
+    int p = 1;
+    for (i = 1; i <= 100; i = i + 2)
+    {
+        p = p * i;
+    }
+    printf("1*3*5*...*100=%d", p);
+    return 0;
+}
+*/
+
 
 //
+/*
+float main (){
+    float x,y,z,sum=0;
+    for ( x = 1; x <= 100; x++){
+        z = 1;
+            for ( y = 1; y <= x; y++)
+            {
+               z = z * y;
+            }
+            sum = sum * z;
+    }
+    printf("100以内的累加=%d",sum);
+    return 0;
+}
+*/
+
+//
+/*
 int main(){
     double x;
     double y;
@@ -413,7 +447,10 @@ int main(){
     printf("100以内的累加=%f", sum);
     return 0;
 }
+*/
 
+//
+/*
 int main(){
     int i;
     int sum=0;
@@ -424,7 +461,10 @@ int main(){
     printf("1+3+5+...+100=%d\n", sum);
     return 0;
 }
+*/
 
+//
+/*
 int main()
 {
     int i;
@@ -438,9 +478,10 @@ int main()
     printf("1+3+5+...+100=%d\n", sum);
     return 0;
 }
+*/
 
-
-
+//
+/*
 int main(){
     float money = 0;
     int day = 0;
@@ -454,8 +495,10 @@ int main(){
     }
     return 0;
 }
+*/
 
-
+//
+/*
 int main(){
     float money = 0;
     int day = 0;
@@ -470,6 +513,7 @@ int main(){
             break;
         }
     }while (1);
-    
+
     return 0;
 }
+*/
