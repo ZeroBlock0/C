@@ -1,6 +1,8 @@
+// 包含标准输入输出库
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 // hello world
 /*
@@ -148,6 +150,7 @@ int main() {
     return 0;
 }
 */
+
 /*
 int main() {
     // 定义浮点类型变量weight表示体重（单位：kg），height表示身高（单位：m），bmi表示身体质量指数（BMI）
@@ -411,7 +414,6 @@ int main()
 }
 */
 
-
 //
 /*
 float main (){
@@ -517,3 +519,296 @@ int main(){
     return 0;
 }
 */
+
+// BMI 3.0
+/*
+int main() {
+    float weight, height, bmi;
+    char choice;
+    A1:
+    printf("体重(KG): ");
+    scanf("%f", &weight);
+
+    if (weight <= 0) {
+        printf("体重不能小于等于 0\n");
+        weight = -INFINITY;    //重置
+        goto A1;
+    }
+    A2:
+    printf("身高(M): ");
+    scanf("%f", &height);
+
+    if (height <= 0) {
+        printf("身高不能小于等于 0\n");
+        height = -INFINITY;    //重置
+        goto A2;
+    }
+
+    bmi = weight / (height * height);
+
+    printf("BMI=%.2f\n", bmi);
+
+    if (bmi < 18.5) {
+        printf("过轻\n");
+        printf("建议:\n");
+    } else if (bmi < 24) {
+        printf("正常\n");
+        printf("建议:\n");
+    } else if (bmi < 27) {
+        printf("过重\n");
+        printf("建议:\n");
+    } else if (bmi < 30) {
+        printf("1度肥胖\n");
+        printf("建议:\n");
+    } else if (bmi < 35) {
+        printf("2度肥胖\n");
+        printf("建议:\n");
+    } else {
+        printf("3度肥胖\n");
+        printf("建议:\n");
+    }
+
+    do {
+        printf("是否回到开始? Y/N\n");
+        scanf(" %c",&choice);
+        choice = toupper(choice); //小写转大写
+        if (choice != 'Y' && choice != 'N'){
+        printf("输入无效，请重新输入\n");
+            }
+    }while(choice != 'Y' && choice != 'N');
+
+    if (choice == 'Y'){
+    weight = -INFINITY;    //重置
+    height = -INFINITY;    //重置
+    bmi = -INFINITY;    //重置
+    choice = INT_MIN;    //重置
+    system("cls"); //清屏
+    goto A1;
+    }else{
+    printf("感谢使用");
+    return 0;
+    }
+}
+*/
+
+// 计算5名学生成绩
+/*
+int main()
+{
+   int stu[5],i = 0,stuavg = 0,sum = 0,a = 0;
+   for(i = 0;i <= 4;i++)
+    {
+        a = i + 1;
+        printf("请输入第%d位同学的成绩:",a);
+        scanf("%d",&stu[i]);
+        sum = sum + stu[i];
+    }
+    stuavg = sum / a;
+    printf("平均分%d",stuavg);
+    return 0;
+}
+*/
+
+// 计算50名学生成绩
+/*
+int main()
+{
+   int stu[50],i = 0,stuavg = 0,sum = 0,a = 0;
+   for(i = 0;i <= 49;i++)
+    {
+        a = i + 1;
+        printf("请输入第%d位同学的成绩:",a);
+        scanf("%d",&stu[i]);
+        sum = sum + stu[i];
+    }
+    stuavg = sum / a;
+    printf("平均分%d",stuavg);
+    return 0;
+}
+*/
+
+// 冒泡排序
+/*
+int main() {
+    int x[10]; // 定义一个包含10个整数的数组
+    int a, b, c; // 定义循环和交换变量
+
+    printf("请输入10个整数:\n"); // 提示用户输入
+
+    // 使用for循环读取用户输入的10个整数
+    for (a = 0; a < 10; a++) {
+        scanf("%d", &x[a]);
+    }
+
+    printf("使用的是冒泡排序\n"); // 告知用户采用的排序方法为冒泡排序
+
+    // 冒泡排序算法实现
+    // 外层循环控制遍历次数，每次遍历都将最大的数移到末尾
+    for (a = 0; a < 9; a++) { // 优化：只需比较到倒数第二个元素即可
+        // 内层循环负责每一轮的相邻元素比较和交换
+        for (b = 0; b < 9 - a; b++) { // 优化：随着外层循环推进，已排序部分无需再比较
+            if (x[b] > x[b + 1]) { // 比较当前元素与下一个元素的大小
+                c = x[b]; // 临时存储较大值
+                x[b] = x[b + 1]; // 将较小值移至前面
+                x[b + 1] = c; // 将存储的较大值放到后面
+            }
+        }
+    }
+
+    printf("排列好的数组是:\n"); // 输出排序完成的信息
+
+    // 打印排序后的数组
+    for (a = 0; a < 10; a++) {
+        printf("%d ", x[a]); // 每个元素后跟一个空格
+    }
+    printf("\n"); // 结束行打印，使得输出更加清晰
+
+    return 0; // 程序正常结束
+}
+*/
+
+// 数据逆序输出
+/*
+int main() {
+    int arr[10]; // 第一步：定义一个能存放10个整数的数组
+    int i, j, temp; // 定义循环变量和临时变量用于交换
+
+    printf("请输入10个整数，以空格分隔:\n");
+    for(i = 0; i < 10; i++) { // 第二步：使用for循环从键盘输入10个整数
+        scanf("%d", &arr[i]);
+    }
+
+    // 实际上，不需要额外的for循环来交换数组中的值来达到逆序，
+    // 直接在输出时逆序遍历即可。这里直接进入第四步。
+
+    printf("逆序输出的结果是:\n");
+    // 第四步：利用for循环从最后一个元素开始向前遍历并输出
+    for(i = 9; i >= 0; i--) { // 从数组的最大下标9开始，递减到0
+        printf("%d ", arr[i]); // 输出数组中的元素
+    }
+    printf("\n"); // 结束行打印
+
+    return 0;
+}
+*/
+
+// 在一个从小到大排序的有序数组中插入一个新数
+/*
+int main() {
+    int arr[] = {1, 3, 5, 6, 8, 10}; // 已排序的数组
+    int n = sizeof(arr) / sizeof(arr[0]); // 数组长度
+    int i;
+
+    printf("Original array: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    // 请求用户输入要插入的数字
+    printf("Enter the number to insert: ");
+    int newNum;
+    scanf("%d", &newNum);
+
+    // 寻找插入位置并移动元素
+    for (i = 0; i < n && newNum > arr[i]; i++);
+
+    // 将数组元素向后移动一位，为新数腾出空间
+    for (int j = n; j > i; j--) {
+        arr[j] = arr[j - 1];
+    }
+
+    // 在找到的位置插入新数
+    arr[i] = newNum;
+    n++; // 数组长度增加
+
+    printf("After inserting %d: ", newNum);
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+*/
+
+// 某班20个学生参加了一次语文考试，从键盘输入全班学生的成绩，并按学生成绩降序排序。
+/*
+int main() {
+    int scores[20];
+    int n = 20;
+    int i, j, temp;
+
+    printf("请输入20个学生的语文成绩，每输入一个成绩后按回车继续:\n");
+
+    // 输入20个学生的成绩
+    for (i = 0; i < n; i++) {
+        scanf("%d", &scores[i]);
+    }
+
+    // 冒泡排序，降序
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - 1 - i; j++) {
+            if (scores[j] < scores[j + 1]) { // 如果前一个数小于后一个数，则交换它们
+                temp = scores[j];
+                scores[j] = scores[j + 1];
+                scores[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("成绩降序排序结果:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", scores[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+*/
+
+/*实现思路
+第一、定义一个能存放10个整数的一维数组，并存放10个无序的数
+第二、使用双重循环利用冒泡算法进行操作
+外循环决定总共循环多少趟 （总个数-1）
+内循环实现两相邻数比较（每趟循环次数：总个数-1-当前趟数）
+第三、输出有序数列*/
+/**/
+int main()
+{
+    int arr[10]; // 第一步：定义一个能存放10个整数的数组
+    int n = 10;  // 数组长度
+    int i, j, temp;
+
+    printf("请输入10个无序的整数，每输入一个后按回车继续:\n");
+
+    // 第一步的后半部分：通过循环从用户处获取10个整数
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // 第二步：使用冒泡排序算法进行排序
+    for (i = 0; i < n - 1; i++)
+    { // 外循环，决定总共需要进行的趟数
+        for (j = 0; j < n - 1 - i; j++)
+        { // 内循环，每趟比较并交换
+            if (arr[j] > arr[j + 1])
+            { // 如果前一个元素大于后一个元素，则交换它们
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    // 第三步：输出排序后的有序数列
+    printf("排序后的有序数列为:\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
