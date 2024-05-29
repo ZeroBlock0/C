@@ -414,6 +414,7 @@ int main()
 }
 */
 
+
 //
 /*
 float main (){
@@ -520,6 +521,8 @@ int main(){
 }
 */
 
+
+
 // BMI 3.0
 /*
 int main() {
@@ -591,7 +594,8 @@ int main() {
 }
 */
 
-// 计算5名学生成绩
+
+//计算5名学生成绩
 /*
 int main()
 {
@@ -609,7 +613,8 @@ int main()
 }
 */
 
-// 计算50名学生成绩
+
+//计算50名学生成绩
 /*
 int main()
 {
@@ -627,7 +632,8 @@ int main()
 }
 */
 
-// 冒泡排序
+
+//冒泡排序
 /*
 int main() {
     int x[10]; // 定义一个包含10个整数的数组
@@ -667,7 +673,8 @@ int main() {
 }
 */
 
-// 数据逆序输出
+
+//数据逆序输出
 /*
 int main() {
     int arr[10]; // 第一步：定义一个能存放10个整数的数组
@@ -692,7 +699,8 @@ int main() {
 }
 */
 
-// 在一个从小到大排序的有序数组中插入一个新数
+
+//在一个从小到大排序的有序数组中插入一个新数
 /*
 int main() {
     int arr[] = {1, 3, 5, 6, 8, 10}; // 已排序的数组
@@ -732,7 +740,11 @@ int main() {
 }
 */
 
-// 某班20个学生参加了一次语文考试，从键盘输入全班学生的成绩，并按学生成绩降序排序。
+
+
+
+
+//某班20个学生参加了一次语文考试，从键盘输入全班学生的成绩，并按学生成绩降序排序。
 /*
 int main() {
     int scores[20];
@@ -767,6 +779,8 @@ int main() {
 }
 */
 
+
+
 /*实现思路
 第一、定义一个能存放10个整数的一维数组，并存放10个无序的数
 第二、使用双重循环利用冒泡算法进行操作
@@ -774,27 +788,22 @@ int main() {
 内循环实现两相邻数比较（每趟循环次数：总个数-1-当前趟数）
 第三、输出有序数列*/
 /*
-int main()
-{
+int main() {
     int arr[10]; // 第一步：定义一个能存放10个整数的数组
-    int n = 10;  // 数组长度
+    int n = 10; // 数组长度
     int i, j, temp;
 
     printf("请输入10个无序的整数，每输入一个后按回车继续:\n");
 
     // 第一步的后半部分：通过循环从用户处获取10个整数
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
     // 第二步：使用冒泡排序算法进行排序
-    for (i = 0; i < n - 1; i++)
-    { // 外循环，决定总共需要进行的趟数
-        for (j = 0; j < n - 1 - i; j++)
-        { // 内循环，每趟比较并交换
-            if (arr[j] > arr[j + 1])
-            { // 如果前一个元素大于后一个元素，则交换它们
+    for (i = 0; i < n - 1; i++) { // 外循环，决定总共需要进行的趟数
+        for (j = 0; j < n - 1 - i; j++) { // 内循环，每趟比较并交换
+            if (arr[j] > arr[j + 1]) { // 如果前一个元素大于后一个元素，则交换它们
                 temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
@@ -804,8 +813,7 @@ int main()
 
     // 第三步：输出排序后的有序数列
     printf("排序后的有序数列为:\n");
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
     printf("\n");
@@ -814,6 +822,176 @@ int main()
 }
 */
 
+//yhsj;杨辉三角
+/*
+int main() {
+    int n = 10;
+    int nums[n][n];
+    int i, j;
 
-//
+    // 计算杨辉三角的值
+    for (i = 0; i < n; i++) {
+        nums[i][0] = 1;
+        nums[i][i] = 1;
+        for(j = 1; j < i; j++) {
+            nums[i][j] = nums[i - 1][j - 1] + nums[i - 1][j];
+        }
+    }
+
+    // 打印杨辉三角
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n - i - 1; j++) {
+            printf("   ");
+        }
+        for(j = 0; j <= i; j++) {
+            printf("%-5d", nums[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+*/
+
+
+//百鸡百钱
+// 公鸡5元一只 母鸡3元一只 小鸡1元三只
+/*
+int main() {
+    int a, b, c, m; // 公鸡a 母鸡b 小鸡c 总数&钱m
+
+    m = 100;
+
+    for (a = 1; a <= m / 5; a++) { // 公鸡至少买1只，不超过总金额限制
+        for (b = 1; b <= (m - 5 * a) / 3; b++) { // 母鸡至少买1只，同时确保总和不超过m
+            for (c = 3; c <= (m - 5 * a - 3 * b) / (1.0 / 3); c += 3) { // 小鸡至少3只，每次增加3，确保总和不超过m
+                if ((a + b + c == m) && (5 * a + 3 * b + c / 3.0 == m)) {
+                    printf("%d公鸡,%d母鸡,%d小鸡\n", a, b, c);
+                }
+            }
+        }
+    }
+
+    return 0;
+}
+*/
+
+
+//四叶玫瑰
+/*
+int main() {
+    // 从1000开始到9999结束，检查每一个数是否为四叶玫瑰数
+    for (int number = 1000; number <= 9999; number++) {
+        // 提取各位上的数字
+        int thousand = number / 1000;      // 千位
+        int hundred = (number / 100) % 10;  // 百位
+        int ten = (number / 10) % 10;       // 十位
+        int one = number % 10;             // 个位
+
+        // 计算各位数字的四次方之和
+        int sumOfPowers = thousand*thousand*thousand*thousand +
+                         hundred*hundred*hundred*hundred +
+                         ten*ten*ten*ten +
+                         one*one*one*one;
+
+        // 如果计算的和等于原数，说明是四叶玫瑰数，打印出来
+        if (number == sumOfPowers) {
+            printf("%d \t", number);
+        }
+    }
+
+    return 0;  // 程序执行完毕，正常退出
+}
+*/
+
+
+//水仙花1
+/*
+int main() {
+    // 从100开始到999结束，检查每一个数是否为水仙花数
+    for (int n = 100; n <= 999; n++) {
+        // 提取各位上的数字
+        int hundred = n / 100;      // 百位
+        int ten = (n / 10) % 10;     // 十位
+        int one = n % 10;           // 个位
+
+        // 计算每位数字的立方和
+        int sum = hundred * hundred * hundred +
+                 ten * ten * ten +
+                 one * one * one;
+
+        // 如果计算的和等于原数，说明是水仙花数，打印出来及计算过程
+        if (n == sum) {
+            printf("%d 是水仙花数: %d^3 + %d^3 + %d^3 = %d\n",
+                   n, hundred, ten, one, sum);
+        }
+    }
+
+    return 0;  // 程序执行完毕，正常结束
+}
+*/
+
+
+
+
+
+
+
+//水仙花1.1
+/*
+int main() {
+
+    for (int num = 100; num <= 999; num++) {
+
+        int h = num / 100;      // 百位
+        int t = (num / 10) % 10;     // 十位
+        int o = num % 10;           // 个位
+
+
+        int sum = h*h*h+t*t*t+o*o*o;
+
+
+        if (num == sum) {
+            printf("%d 是水仙花数: %d^3 + %d^3 + %d^3 = %d\n",
+                   num, h, t, o, sum);
+        }
+    }
+
+    return 0;
+}
+*/
+
+
+
+
+
+
+
+
+
+//北斗七星
 /**/
+int main() {
+    // 从1000000开始到9999999结束，尝试寻找七位的水仙花数
+    for (int num = 1000000; num <= 9999999; num++) {
+        // 分别提取各位上的数字
+        int m = num / 1000000;      // 百万位
+        int h = (num / 100000) % 10; // 十万位
+        int t = (num / 10000) % 10;  // 万位
+        int th = (num / 1000) % 10; // 千位
+        int hun = (num / 100) % 10;     // 百位
+        int ten = (num / 10) % 10;      // 十位
+        int one = num % 10;           // 个位
+
+        // 计算每位数字的立方和
+        int sum = m*m*m + h*h*h + t*t*t + th*th*th + hun*hun*hun + ten*ten*ten + one*one*one;
+
+        // 如果计算的和等于原数，说明是七位水仙花数，打印出来及计算过程
+        if (num == sum) {
+            printf("%d 是七位水仙花数: %d^3 + %d^3 + %d^3 + %d^3 + %d^3 + %d^3 + %d^3 = %d\n",
+                   num, m, h, t, th, hun, ten, one, sum);
+        }
+    }
+
+    return 0;  // 程序执行完毕，正常结束
+}
